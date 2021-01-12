@@ -1,0 +1,32 @@
+{% include header.html %}
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
+    {% for post in site.posts %}
+    <div class="col mb-3">      
+      <article class="p-2 rounded bg-grey">
+        <div>
+          <a href="{{ post.url }}">
+            <p class="text-center">
+              {{ post.date | date_to_long_string }}
+            </p>
+            <h2 class="text-center text-uppercase blog-loop">
+              {{ post.title }}
+            </h2>
+            <div>
+            </div>
+            <div>
+              <img src="{{ post.thumbnail }}" class="img-fluid" />
+            </div>
+            <div>
+              <p>
+                {{ post.excerpt }}
+              </p>
+            </div>
+          </a>
+        </div>                         
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</div>          
+{% include footer.html %}
